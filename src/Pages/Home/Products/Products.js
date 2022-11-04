@@ -5,7 +5,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("services.json")
+    fetch("product.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -23,14 +23,15 @@ const Products = () => {
         </p>
       </div>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products.map((product) => (
-            <ProductCard
-              key={product.service_id}
-              product={product}
-            ></ProductCard>
-          ))}
+        <div className="grid gap-4 pb-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+          {products.map(product => <ProductCard
+            key={product.id}
+            product={product}
+          ></ProductCard>)}
         </div>
+
+
       </div>
     </div>
   );

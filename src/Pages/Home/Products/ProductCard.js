@@ -1,28 +1,30 @@
 import React from "react";
-import img1 from "../../../assets/images/products/1.png";
-import img2 from "../../../assets/images/products/2.png";
-import img3 from "../../../assets/images/products/3.png";
-import img4 from "../../../assets/images/products/4.png";
-import img5 from "../../../assets/images/products/5.png";
-import img6 from "../../../assets/images/products/6.png";
+import { FaStar } from 'react-icons/fa';
+
+
 const ProductCard = ({ product }) => {
   //   console.log(product.facility);
-  const { price, facility } = product;
+  const { image, title } = product;
+  console.log(product)
 
   return (
-    <div>
-      <div className="card card-compact w-80 bg-base-100 shadow-xl">
-        <figure>
-          <img src={img3} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{facility[0].name}</h2>
-          <p className="text-orange-600 font-semibold text-xl">
-            Price : ${price}
-          </p>
-        </div>
+
+    <div className=" card card-compact w-80 bg-base-100 shadow-xl">
+      <figure>
+        <img src={image} alt="" />
+      </figure>
+
+      <h2 className="text-xl text-center font-semibold text-orange-600">{title}</h2>
+      <div className="flex items-center justify-center gap-2 py-2">
+        < FaStar className="text-orange-600"></FaStar>
+        < FaStar className="text-orange-600"></FaStar>
+        < FaStar className="text-orange-600"></FaStar>
+        < FaStar className="text-orange-600"></FaStar>
       </div>
+
+
     </div>
+
   );
 };
 
