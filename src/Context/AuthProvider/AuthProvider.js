@@ -5,7 +5,6 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
 } from "firebase/auth";
 import { useState } from "react";
 import { useEffect } from "react";

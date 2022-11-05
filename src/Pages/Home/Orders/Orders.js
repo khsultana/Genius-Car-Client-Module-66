@@ -7,7 +7,9 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`)
+    fetch(
+      `https://genius-car-server-module-66-beta.vercel.app/orders?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
@@ -15,9 +17,12 @@ const Orders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure ? ");
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://genius-car-server-module-66-beta.vercel.app/orders/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -31,7 +36,7 @@ const Orders = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://genius-car-server-module-66-beta.vercel.app/orders/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
